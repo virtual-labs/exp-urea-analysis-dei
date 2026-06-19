@@ -4,7 +4,7 @@
   "questions": [
      {
      
-      "question": "6. Rf stands for",
+      "question": "1. Rf stands for",
       "answers": {
         "a": "Reference Factor",
         "b": "Relative Factor",
@@ -21,7 +21,7 @@
     },
     {
     
-      "question": "7. What will be the nature of sample is used in HPTLC analysis",
+      "question": "2. What will be the nature of sample is used in HPTLC analysis",
       "answers": {
         "a": "Partially Soluble",
         "b": "Insoluble",
@@ -38,7 +38,7 @@
     },
     {
      
-      "question": "8. How many lamps are present in densitometer of HPTLC used for analysis",
+      "question": "3. How many lamps are present in densitometer of HPTLC used for analysis",
       "answers": {
         "a": "Four",
         "b": "Three",
@@ -55,7 +55,7 @@
     },
     {
       
-      "question": "9. Which technique is used for sample application in HPTLC?",
+      "question": "4. Which technique is used for sample application in HPTLC?",
       "answers": {
         "a": "Manual spotting with capillary tube",
         "b": "Automatic sample applicator (Linomat or CAMAG sprayer)",
@@ -72,7 +72,7 @@
     },
     {
      
-      "question": "10. What is the typical particle size of silica gel used in HPTLC plates?",
+      "question": "5. What is the typical particle size of silica gel used in HPTLC plates?",
       "answers": {
         "a": "50-100 μm",
         "b": "5-10 μm",
