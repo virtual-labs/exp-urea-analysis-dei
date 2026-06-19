@@ -1,10 +1,10 @@
 {
   "version": 2.0,
-  "quiz_title": "Urea and HPTLC Quiz",
+  
   "questions": [
     {
-      "num": 1,
-      "question": "Urea is transported by",
+     
+      "question": "1. Urea is transported by",
       "answers": {
         "a": "Plasma",
         "b": "Blood",
@@ -20,8 +20,8 @@
       "correctAnswer": "a"
     },
     {
-      "num": 2,
-      "question": "Excess amino acids in the body are broken down to form urea in",
+     
+      "question": "2. Excess amino acids in the body are broken down to form urea in",
       "answers": {
         "a": "Kidney",
         "b": "Liver",
@@ -37,42 +37,42 @@
       "correctAnswer": "b"
     },
     {
-      "num": 3,
-      "question": "The concentration of urea is highest in",
+     
+      "question": "3. The concentration of urea is highest in",
       "answers": {
-        "a": "renal vein",
-        "b": "hepatic portal vein",
-        "c": "dorsal aorta",
-        "d": "hepatic vein"
+        "a": "Renal vein",
+        "b": "Hepatic portal vein",
+        "c": "Dorsal aorta",
+        "d": "Hepatic vein"
       },
       "explanations": {
         "a": "Incorrect. The renal vein carries blood away from the kidney after urea has been filtered out.",
         "b": "Incorrect. The hepatic portal vein carries nutrient-rich blood from the digestive system to the liver.",
         "c": "Incorrect. The dorsal aorta carries oxygenated blood to the body, not specifically high in urea.",
-        "d": "Correct. The hepatic vein carries blood from the liver (where urea is synthesized) back to the heart, so it has the highest concentration of urea."
+        "d": "Correct. The hepatic vein carries blood from the liver, where urea is synthesized, back to the heart and therefore has the highest concentration of urea."
       },
       "correctAnswer": "d"
     },
     {
-      "num": 4,
-      "question": "Which one has the highest percentage of nitrogen?",
+     
+      "question": "4. Which one has the highest percentage of nitrogen?",
       "answers": {
-        "a": "CaNO₃",
+        "a": "Ca(NO₃)₂",
         "b": "CAN",
         "c": "Urea",
         "d": "NH₄NO₃"
       },
       "explanations": {
-        "a": "Incorrect. Calcium nitrate (CaNO₃) has a lower nitrogen percentage.",
-        "b": "Incorrect. CAN (Calcium Ammonium Nitrate) has around 25-27% nitrogen.",
-        "c": "Correct. Urea has the highest nitrogen content among common fertilizers at approximately 46% nitrogen.",
-        "d": "Incorrect. Ammonium nitrate (NH₄NO₃) has about 33-35% nitrogen."
+        "a": "Incorrect. Calcium nitrate contains a lower percentage of nitrogen than urea.",
+        "b": "Incorrect. CAN (Calcium Ammonium Nitrate) contains approximately 25–27% nitrogen.",
+        "c": "Correct. Urea contains approximately 46% nitrogen, the highest among these common fertilizers.",
+        "d": "Incorrect. Ammonium nitrate contains approximately 33–35% nitrogen."
       },
       "correctAnswer": "c"
     },
     {
-      "num": 5,
-      "question": "Arrange the following solvents in their increasing order of polarity: water, methanol, Toluene",
+     
+      "question": "5. Arrange the following solvents in their increasing order of polarity: Water, Methanol, Toluene",
       "answers": {
         "a": "Methanol → Toluene → Water",
         "b": "Toluene → Water → Methanol",
@@ -81,9 +81,11 @@
       },
       "explanations": {
         "a": "Incorrect. This is not the correct order of polarity.",
-        "b": "Incorrect. This order is incorrect.",
-        "c": "Incorrect. This order is incorrect.",
-        "d": "Correct. Toluene is non-polar (least polar), methanol is polar, and water is the most polar. So increasing order of polarity: Toluene < Methanol < Water."
+        "b": "Incorrect. Water is more polar than methanol.",
+        "c": "Incorrect. Water is the most polar solvent among the three.",
+        "d": "Correct. Toluene is the least polar, methanol is moderately polar, and water is the most polar. Therefore, the increasing order of polarity is Toluene < Methanol < Water."
       },
       "correctAnswer": "d"
-    },
+    }
+  ]
+}
