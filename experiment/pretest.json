@@ -1,39 +1,89 @@
 {
   "version": 2.0,
+  "quiz_title": "Urea and HPTLC Quiz",
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "num": 1,
+      "question": "Urea is transported by",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Plasma",
+        "b": "Blood",
+        "c": "RBC",
+        "d": "WBC"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. Urea is transported in the blood plasma, which is the liquid component of blood.",
+        "b": "Incorrect. While urea is carried in blood, it is specifically dissolved in the plasma, not the cellular components.",
+        "c": "Incorrect. RBCs (Red Blood Cells) primarily carry oxygen and carbon dioxide.",
+        "d": "Incorrect. WBCs (White Blood Cells) are part of the immune system, not for transporting urea."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "num": 2,
+      "question": "Excess amino acids in the body are broken down to form urea in",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Kidney",
+        "b": "Liver",
+        "c": "Spleen",
+        "d": "Pancreas"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. The kidneys filter urea from blood but do not synthesize it.",
+        "b": "Correct. The liver is the primary site for the urea cycle (ornithine cycle), where excess amino acids are deaminated and converted to urea.",
+        "c": "Incorrect. The spleen is involved in filtering blood and immune responses.",
+        "d": "Incorrect. The pancreas produces digestive enzymes and hormones like insulin."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+      "correctAnswer": "b"
+    },
+    {
+      "num": 3,
+      "question": "The concentration of urea is highest in",
+      "answers": {
+        "a": "renal vein",
+        "b": "hepatic portal vein",
+        "c": "dorsal aorta",
+        "d": "hepatic vein"
+      },
+      "explanations": {
+        "a": "Incorrect. The renal vein carries blood away from the kidney after urea has been filtered out.",
+        "b": "Incorrect. The hepatic portal vein carries nutrient-rich blood from the digestive system to the liver.",
+        "c": "Incorrect. The dorsal aorta carries oxygenated blood to the body, not specifically high in urea.",
+        "d": "Correct. The hepatic vein carries blood from the liver (where urea is synthesized) back to the heart, so it has the highest concentration of urea."
+      },
+      "correctAnswer": "d"
+    },
+    {
+      "num": 4,
+      "question": "Which one has the highest percentage of nitrogen?",
+      "answers": {
+        "a": "CaNO₃",
+        "b": "CAN",
+        "c": "Urea",
+        "d": "NH₄NO₃"
+      },
+      "explanations": {
+        "a": "Incorrect. Calcium nitrate (CaNO₃) has a lower nitrogen percentage.",
+        "b": "Incorrect. CAN (Calcium Ammonium Nitrate) has around 25-27% nitrogen.",
+        "c": "Correct. Urea has the highest nitrogen content among common fertilizers at approximately 46% nitrogen.",
+        "d": "Incorrect. Ammonium nitrate (NH₄NO₃) has about 33-35% nitrogen."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "num": 5,
+      "question": "Arrange the following solvents in their increasing order of polarity: water, methanol, Toluene",
+      "answers": {
+        "a": "Methanol → Toluene → Water",
+        "b": "Toluene → Water → Methanol",
+        "c": "Water → Toluene → Methanol",
+        "d": "Toluene → Methanol → Water"
+      },
+      "explanations": {
+        "a": "Incorrect. This is not the correct order of polarity.",
+        "b": "Incorrect. This order is incorrect.",
+        "c": "Incorrect. This order is incorrect.",
+        "d": "Correct. Toluene is non-polar (least polar), methanol is polar, and water is the most polar. So increasing order of polarity: Toluene < Methanol < Water."
+      },
+      "correctAnswer": "d"
+    },
