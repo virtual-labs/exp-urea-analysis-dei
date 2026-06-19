@@ -1,39 +1,91 @@
 {
   "version": 2.0,
+  "quiz_title": "Urea and HPTLC Quiz",
   "questions": [
-    {
-      "question": "This is a Sample Question 1?",
+     {
+     
+      "question": "1. Rf stands for",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Reference Factor",
+        "b": "Relative Factor",
+        "c": "Retardation Factor",
+        "d": "Retention Factor"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. The correct term is Retardation Factor, not Reference Factor.",
+        "b": "Incorrect. Relative Factor is not the correct term.",
+        "c": "Correct. Rf stands for Retardation Factor (or Retention Factor in some contexts), which is the ratio of the distance traveled by the solute to the distance traveled by the solvent front.",
+        "d": "Incorrect. While sometimes referred to as Retention Factor, the more accurate and common term is Retardation Factor."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
     },
     {
-      "question": "This is a Sample Question 2?",
+    
+      "question": "2. What will be the nature of sample is used in HPTLC analysis",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Partially Soluble",
+        "b": "Insoluble",
+        "c": "Saturated Solution",
+        "d": "Completely Soluble"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. Partially soluble samples would not give accurate results.",
+        "b": "Incorrect. Insoluble samples cannot be applied to the TLC plate.",
+        "c": "Incorrect. Saturated solutions are not typically used as the concentration may be too high.",
+        "d": "Correct. The sample must be completely soluble in the chosen solvent to ensure accurate application and separation on the HPTLC plate."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "d"
+    },
+    {
+     
+      "question": "3. How many lamps are present in densitometer of HPTLC used for analysis",
+      "answers": {
+        "a": "Four",
+        "b": "Three",
+        "c": "Two",
+        "d": "One"
+      },
+      "explanations": {
+        "a": "Incorrect. A densitometer typically does not have four lamps.",
+        "b": "Incorrect. Three lamps is not the standard configuration.",
+        "c": "Correct. A typical HPTLC densitometer has two lamps - one for absorbance measurements and one for fluorescence measurements.",
+        "d": "Incorrect. A single lamp cannot provide both absorbance and fluorescence modes."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      
+      "question": "4. Which technique is used for sample application in HPTLC?",
+      "answers": {
+        "a": "Manual spotting with capillary tube",
+        "b": "Automatic sample applicator (Linomat or CAMAG sprayer)",
+        "c": "Dipping the plate in sample solution",
+        "d": "Pouring the sample onto the plate"
+      },
+      "explanations": {
+        "a": "Incorrect. Manual spotting is used in conventional TLC but not in HPTLC due to poor reproducibility.",
+        "b": "Correct. HPTLC uses automatic sample applicators like Linomat or CAMAG sprayers that apply the sample as a narrow band for better resolution and reproducibility.",
+        "c": "Incorrect. Dipping the plate would apply sample to the entire plate, not localized spots.",
+        "d": "Incorrect. Pouring would apply sample to the entire plate surface."
+      },
+      "correctAnswer": "b"
+    },
+    {
+     
+      "question": "5. What is the typical particle size of silica gel used in HPTLC plates?",
+      "answers": {
+        "a": "50-100 μm",
+        "b": "5-10 μm",
+        "c": "1-2 μm",
+        "d": "100-200 μm"
+      },
+      "explanations": {
+        "a": "Incorrect. 50-100 μm is the particle size for conventional TLC plates.",
+        "b": "Correct. HPTLC plates use very fine particles of silica gel with a size of 5-10 μm, which provides higher resolution and faster separation.",
+        "c": "Incorrect. 1-2 μm would be too fine and impractical.",
+        "d": "Incorrect. 100-200 μm is used for preparative TLC plates."
+      },
+      "correctAnswer": "b"
     }
   ]
 }
