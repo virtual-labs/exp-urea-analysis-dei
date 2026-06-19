@@ -1,13 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulation</title>
+
+<style>
+body{
+    font-family: "Times New Roman", serif;
+    background:#f2f2f2;
+}
+
+.container{
+    width:800px;
+    margin:40px auto;
+    background:#fff;
+    padding:40px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.row{
+    margin:20px 0;
+}
+
+label{
+    display:inline-block;
+    width:180px;
+}
+
+button{
+    margin-top:15px;
+    padding:4px 12px;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:30px;
+}
+
+.explanation{
+    display:none;
+    margin-top:80px;
+}
+
+.explanation h2{
+    margin-bottom:30px;
+}
+
+.explanation p{
+    line-height:1.7;
+    text-align:justify;
+}
+
+.video-section{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.video-section video{
+    max-width:100%;
+    border:1px solid #ccc;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+.col td {
+    padding: 8px 10px;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    width: 60px;
+}
+
+select {
+    padding: 4px 8px;
+    min-width: 280px;
+}
+
+#submit {
+    margin-top: 10px;
+    padding: 4px 20px;
+    cursor: pointer;
+}
+</style>
 </head>
 <body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<div class="container">
+    <h1>Animation</h1>
+
+    <!-- Experiment Animation Video -->
+    <div class="video-section">
+        <video width="700" controls autoplay loop>
+            <source src="images/Final_Exp5.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h1>Simulation</h1>
+
+    <div class="row">
+        <strong>Stationary Phase:</strong> Silica gel
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Saturation time:</strong> 15 minutes
+    </div>
+
+    <div class="row">
+        <label>Solvent System:</label>
+        <select name="one" id="one">
+            <option>None</option>
+            <option>n-propanol: Water:: 8:2 (v/v)</option>
+            <option>n-propanol: Water:: 8:2.3 (v/v)</option>
+            <option>n-propanol: Water:: 8:2.4 (v/v)</option>
+            <option>n-propanol: Water:: 8:1.5 (v/v)</option>
+            <option>n-propanol: Water:: 8:1 (v/v)</option>
+        </select>
+        <br>
+        <button onclick="setVisibility()">Submit</button>
+    </div>
+
+    <div class="result">
+        <table>
+            <tr>
+                <td style="width:200px;"><strong>Optimum Rf:</strong> 0.74</td>
+                <td><strong>Simulation Rf:</strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="text" id="rfValue" readonly></td>
+            </tr>
+        </table>
+
+        <p style="margin-top:20px;"><strong>RF VALUE IS DEPENDENT ON POLARITY OF SOLVENT SYSTEM</strong></p>
+    </div>
+
+    <!-- Hidden initially -->
+    <div class="explanation" id="explanation">
+        <h2>EXPLANATION:</h2>
+
+        <p>
+            Rf value is dependent on the polarity of the solvent system. It increases with the rise in the polarity while shows decreasing trend with the lowering of the polarity of the solvent system. This fact is found to be true in present analysis.
+        </p>
+        <p>
+            As the solvent system moves over the surface of the stationary phase, it transports the analytes over the particles of the stationary phase. If a highly polar solvent is used, it will interact strongly with the molecules of stationary phase and will leave only few sites on the surface of stationary phase, free to bind with the analytes. The analytes will, therefore, move quickly over the stationary phase. Similarly, polar groups in the solvent can interact strongly with polar functionality in the analytes and prevent interaction of the analytes with the surface of the stationary phase.
+        </p>
+        <p>
+            The polarity of a solvent system to be used for chromatography is evaluated by examining the dielectric constant and dipole moment of the solvent. The larger these two numbers, the more polar is the solvent. In addition, the hydrogen bonding ability of the solvent is also considered.
+        </p>
+    </div>
+
+</div>
+
+<script>
+function setVisibility() {
+    const solvent = document.getElementById("one").value;
+    const rfValue = document.getElementById("rfValue");
+    const explanation = document.getElementById("explanation");
+
+    // Rf values mapping for different solvent systems
+    const rfValues = {
+        "n-propanol: Water:: 8:2 (v/v)": "0.74",
+        "n-propanol: Water:: 8:2.3 (v/v)": "0.76",
+        "n-propanol: Water:: 8:2.4 (v/v)": "0.79",
+        "n-propanol: Water:: 8:1.5 (v/v)": "0.69",
+        "n-propanol: Water:: 8:1 (v/v)": "0.65"
+    };
+
+    if (solvent !== "None" && rfValues[solvent]) {
+        rfValue.value = rfValues[solvent];
+        explanation.style.display = "block";
+    } else {
+        rfValue.value = "";
+        explanation.style.display = "none";
+    }
+
+    console.log("Selected solvent:", solvent);
+}
+</script>
+
 </body>
 </html>
