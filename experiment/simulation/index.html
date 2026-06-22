@@ -5,90 +5,201 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulation</title>
 
-<style>
-body{
-    font-family: "Times New Roman", serif;
-    background:#f2f2f2;
+<style>body{
+    margin:0;
+    padding:20px;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#dbeafe,#f0f9ff);
 }
 
 .container{
-    width:800px;
-    margin:40px auto;
+    max-width:1100px;
+    margin:auto;
     background:#fff;
     padding:40px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#0f172a;
+    border-bottom:3px solid #2563eb;
+    padding-bottom:15px;
+    margin-bottom:35px;
+}
+
+/* Video Card */
+
+.video-section{
+    width:70%;
+    margin:0 auto 50px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.video-section video{
+    width:100%;
+    border-radius:15px;
+    display:block;
+}
+
+/* Info Bar */
+
+.row:first-of-type{
+    background:#f8fafc;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .row{
-    margin:20px 0;
+    margin:25px 0;
 }
 
 label{
     display:inline-block;
     width:180px;
+    font-size:18px;
+    font-weight:600;
+    color:#1e293b;
 }
+
+/* Dropdown */
+
+select{
+    width:450px;
+    padding:12px;
+    border:2px solid #cbd5e1;
+    border-radius:10px;
+    background:#f8fafc;
+    font-size:15px;
+}
+
+select:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+/* Button */
 
 button{
     margin-top:15px;
-    padding:4px 12px;
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    font-size:16px;
+    font-weight:600;
     cursor:pointer;
+    transition:.3s;
 }
 
-.result{
-    margin-top:30px;
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(37,99,235,.4);
 }
+
+/* Result Section */
+
+.result{
+    margin-top:40px;
+}
+
+.result table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:20px;
+}
+
+.result td{
+    background:#f8fafc;
+    padding:20px;
+    border-radius:15px;
+    border-left:5px solid #2563eb;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+input[type="text"]{
+    width:100px;
+    padding:10px;
+    border:2px solid #cbd5e1;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    font-size:15px;
+}
+
+/* Note */
+
+.result p{
+    margin-top:30px;
+    padding:15px;
+    background:#dbeafe;
+    color:#1e40af;
+    text-align:center;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* Explanation */
 
 .explanation{
     display:none;
-    margin-top:80px;
+    margin-top:60px;
+    background:#eff6ff;
+    padding:30px;
+    border-radius:15px;
+    border-left:8px solid #2563eb;
 }
 
 .explanation h2{
-    margin-bottom:30px;
+    color:#1e40af;
+    margin-top:0;
+    font-size:32px;
 }
 
 .explanation p{
-    line-height:1.7;
+    line-height:1.9;
+    color:#334155;
+    font-size:17px;
     text-align:justify;
 }
 
-.video-section{
-    text-align:center;
-    margin-bottom:40px;
-}
+/* Mobile */
 
-.video-section video{
-    max-width:100%;
-    border:1px solid #ccc;
-}
+@media(max-width:768px){
 
-table {
-    border-collapse: collapse;
-}
+    .container{
+        padding:20px;
+    }
 
-td {
-    padding: 5px 10px;
-}
+    .video-section{
+        width:95%;
+    }
 
-.col td {
-    padding: 8px 10px;
-}
+    select{
+        width:100%;
+    }
 
-input[type="text"] {
-    border: 1px solid #ccc;
-    padding: 4px 8px;
-    width: 60px;
-}
+    label{
+        display:block;
+        margin-bottom:10px;
+    }
 
-select {
-    padding: 4px 8px;
-    min-width: 280px;
-}
+    .result table,
+    .result tr,
+    .result td{
+        display:block;
+        width:100%;
+    }
 
-#submit {
-    margin-top: 10px;
-    padding: 4px 20px;
-    cursor: pointer;
+    .result td{
+        margin-bottom:15px;
+    }
 }
 </style>
 </head>
@@ -128,16 +239,18 @@ select {
 
     <div class="result">
         <table>
-            <tr>
-                <td style="width:200px;"><strong>Optimum Rf:</strong> 0.74</td>
-                <td><strong>Simulation Rf:</strong></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="text" id="rfValue" readonly></td>
-            </tr>
-        </table>
+    <tr>
+        <td>
+            <strong>Optimum Rf</strong><br><br>
+            Cholesterol : 0.74
+        </td>
 
+        <td>
+            <strong>Simulation Rf</strong><br><br>
+            <input type="text" id="rfValue" readonly>
+        </td>
+    </tr>
+</table>
         <p style="margin-top:20px;"><strong>RF VALUE IS DEPENDENT ON POLARITY OF SOLVENT SYSTEM</strong></p>
     </div>
 
