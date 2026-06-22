@@ -1,4 +1,4 @@
-## Procedure
+### Procedure
 
 - A stock solution (3 mg/ml) of standard urea was prepared in water: MeOH (1:9) and sonicated for 10 minutes over an ultrasonic bath.
 - The solution was filtered through Whatman No. 41 filter paper and filtrate was used as sample solution.
@@ -10,7 +10,7 @@
 - Plates were derivatized using Ehrlich's reagent.
 - Plates were evaluated by densitometry at 440 nm with a Camag Scanner 3 for quantification.
 
-## Observation
+### Observation
 
 The chromatographic profile of the sample was simple, showing urea as the main component (Fig. 1). Urea is not UV active, so the plates were derivatized using the Ehrlich's reagent (Fig. 2). Peak of urea was identified using the solvent system [n-propanol: Water:: 8:2 (v/v)] with the R<sub>f</sub> value of 0.74 ± 0.03 and there was no overlap with any other analyses of the sample at 440 nm (Fig. 3).
 
