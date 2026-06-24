@@ -4,271 +4,442 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>body{
-    margin:0;
-    padding:20px;
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#dbeafe,#f0f9ff);
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    background:#fff;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #102a43;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-h1{
-    text-align:center;
-    color:#0f172a;
-    border-bottom:3px solid #2563eb;
-    padding-bottom:15px;
-    margin-bottom:35px;
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
-/* Video Card */
-
-.video-section{
-    width:70%;
-    margin:0 auto 50px auto;
-    background:#fff;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #102a43;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
 }
 
-.video-section video{
-    width:100%;
-    border-radius:15px;
-    display:block;
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: 2px;
 }
 
-/* Info Bar */
-
-.row:first-of-type{
-    background:#f8fafc;
-    padding:15px 20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+/* Main Layout */
+.app-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    flex-grow: 1;
+    min-height: 0; /* Ensures inner scrolling works correctly */
 }
 
-.row{
-    margin:25px 0;
+/* Panel Common Styles */
+.panel {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-label{
-    display:inline-block;
-    width:180px;
-    font-size:18px;
-    font-weight:600;
-    color:#1e293b;
+.panel h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #334e68;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Dropdown */
-
-select{
-    width:450px;
-    padding:12px;
-    border:2px solid #cbd5e1;
-    border-radius:10px;
-    background:#f8fafc;
-    font-size:15px;
+/* Left Panel (Video) */
+.left-panel {
+    align-items: stretch;
 }
 
-select:focus{
-    outline:none;
-    border-color:#2563eb;
+.video-container {
+    flex-grow: 1;
+    min-height: 0;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* Button */
-
-button{
-    margin-top:15px;
-    padding:12px 30px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+.video-container video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 15px rgba(37,99,235,.4);
+/* Right Panel (Simulation) */
+.right-panel {
+    /* container style inherited */
 }
 
-/* Result Section */
-
-.result{
-    margin-top:40px;
+.scrollable-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
 }
 
-.result table{
-    width:100%;
-    border-collapse:separate;
-    border-spacing:20px;
+/* Custom Scrollbar */
+.scrollable-content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.result td{
-    background:#f8fafc;
-    padding:20px;
-    border-radius:15px;
-    border-left:5px solid #2563eb;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+.scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-input[type="text"]{
-    width:100px;
-    padding:10px;
-    border:2px solid #cbd5e1;
-    border-radius:8px;
-    text-align:center;
-    font-weight:bold;
-    font-size:15px;
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
 }
 
-/* Note */
-
-.result p{
-    margin-top:30px;
-    padding:15px;
-    background:#dbeafe;
-    color:#1e40af;
-    text-align:center;
-    border-radius:10px;
-    font-weight:bold;
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
 }
 
-/* Explanation */
-
-.explanation{
-    display:none;
-    margin-top:60px;
-    background:#eff6ff;
-    padding:30px;
-    border-radius:15px;
-    border-left:8px solid #2563eb;
+/* Metadata Badges */
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.explanation h2{
-    color:#1e40af;
-    margin-top:0;
-    font-size:32px;
+.meta-badge {
+    background: #f0f4f8;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #486581;
+    border-left: 4px solid #3b82f6;
 }
 
-.explanation p{
-    line-height:1.9;
-    color:#334155;
-    font-size:17px;
-    text-align:justify;
+.meta-badge strong {
+    color: #102a43;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Mobile */
+/* Control Row */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
 
-@media(max-width:768px){
+.control-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #102a43;
+}
 
-    .container{
-        padding:20px;
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 15px;
+    font-family: inherit;
+    color: #334e68;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Display */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.result-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 4px solid #3b82f6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    text-align: center;
+}
+
+.result-card.optimum {
+    border-top-color: #10b981;
+}
+
+.result-label {
+    font-size: 11px;
+    color: #627d98;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.result-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #102a43;
+}
+
+.result-input {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #102a43;
+    text-align: center;
+    width: 60px;
+    outline: none;
+    font-family: inherit;
+    display: inline-block;
+}
+
+/* Polarity Callout */
+.callout-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    color: #1e40af;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Explanation Section */
+.explanation-section {
+    display: none;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    margin-top: 10px;
+}
+
+.explanation-section.show {
+    display: block;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation-section h3 {
+    color: #1e3a8a;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.explanation-section p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.explanation-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive (Mobile/Tablets) */
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        overflow: auto;
+        padding: 10px;
     }
 
-    .video-section{
-        width:95%;
+    .app-layout {
+        grid-template-columns: 1fr;
+        height: auto;
     }
 
-    select{
-        width:100%;
+    .panel {
+        height: auto;
     }
 
-    label{
-        display:block;
-        margin-bottom:10px;
-    }
-
-    .result table,
-    .result tr,
-    .result td{
-        display:block;
-        width:100%;
-    }
-
-    .result td{
-        margin-bottom:15px;
+    .video-container {
+        height: 280px;
     }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Animation</h1>
+<div class="header">
+    <h1>Thin Layer Chromatography (TLC) Simulation</h1>
+</div>
 
-    <!-- Experiment Animation Video -->
-    <div class="video-section">
-        <video width="700" controls autoplay loop>
-            <source src="images/Final_Exp5.mp4" type="video/mp4">
-        </video>
+<div class="app-layout">
+    <!-- Left Column: Video Animation -->
+    <div class="panel left-panel">
+        <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video" style="color: #3b82f6;"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            Experiment Animation
+        </h2>
+        <div class="video-container">
+            <video controls autoplay loop>
+                <source src="images/Final_Exp5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
-    <h1>Simulation</h1>
+    <!-- Right Column: Simulation & Results -->
+    <div class="panel right-panel">
+        <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders" style="color: #3b82f6;"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            Simulation Parameters
+        </h2>
 
-    <div class="row">
-        <strong>Stationary Phase:</strong> Silica gel
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Saturation time:</strong> 15 minutes
+        <div class="scrollable-content">
+            <div class="meta-grid">
+                <div class="meta-badge">
+                    <strong>Stationary Phase</strong>
+                    Silica gel
+                </div>
+                <div class="meta-badge">
+                    <strong>Saturation Time</strong>
+                    15 minutes
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="one">Solvent System:</label>
+                <div class="select-wrapper">
+                    <select name="one" id="one">
+                        <option value="None">None</option>
+                        <option value="n-propanol: Water:: 8:2 (v/v)">n-propanol: Water:: 8:2 (v/v)</option>
+                        <option value="n-propanol: Water:: 8:2.3 (v/v)">n-propanol: Water:: 8:2.3 (v/v)</option>
+                        <option value="n-propanol: Water:: 8:2.4 (v/v)">n-propanol: Water:: 8:2.4 (v/v)</option>
+                        <option value="n-propanol: Water:: 8:1.5 (v/v)">n-propanol: Water:: 8:1.5 (v/v)</option>
+                        <option value="n-propanol: Water:: 8:1 (v/v)">n-propanol: Water:: 8:1 (v/v)</option>
+                    </select>
+                </div>
+                <button class="submit-btn" onclick="setVisibility()">Submit</button>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card optimum">
+                    <div class="result-label">Optimum Rf</div>
+                    <div class="result-value">Cholesterol: 0.74</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-label">Simulation Rf</div>
+                    <div class="result-value">
+                        Cholesterol: <input class="result-input" type="text" id="rfValue" readonly value="" placeholder="—">
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                RF VALUE IS DEPENDENT ON POLARITY OF SOLVENT SYSTEM
+            </div>
+
+            <!-- Explanation Section -->
+            <div class="explanation-section" id="explanation">
+                <h3>EXPLANATION:</h3>
+                <p>
+                    Rf value is dependent on the polarity of the solvent system. It increases with the rise in the polarity while shows decreasing trend with the lowering of the polarity of the solvent system. This fact is found to be true in present analysis.
+                </p>
+                <p>
+                    As the solvent system moves over the surface of the stationary phase, it transports the analytes over the particles of the stationary phase. If a highly polar solvent is used, it will interact strongly with the molecules of stationary phase and will leave only few sites on the surface of stationary phase, free to bind with the analytes. The analytes will, therefore, move quickly over the stationary phase. Similarly, polar groups in the solvent can interact strongly with polar functionality in the analytes and prevent interaction of the analytes with the surface of the stationary phase.
+                </p>
+                <p>
+                    The polarity of a solvent system to be used for chromatography is evaluated by examining the dielectric constant and dipole moment of the solvent. The larger these two numbers, the more polar is the solvent. In addition, the hydrogen bonding ability of the solvent is also considered.
+                </p>
+            </div>
+        </div>
     </div>
-
-    <div class="row">
-        <label>Solvent System:</label>
-        <select name="one" id="one">
-            <option>None</option>
-            <option>n-propanol: Water:: 8:2 (v/v)</option>
-            <option>n-propanol: Water:: 8:2.3 (v/v)</option>
-            <option>n-propanol: Water:: 8:2.4 (v/v)</option>
-            <option>n-propanol: Water:: 8:1.5 (v/v)</option>
-            <option>n-propanol: Water:: 8:1 (v/v)</option>
-        </select>
-        <br>
-        <button onclick="setVisibility()">Submit</button>
-    </div>
-
-    <div class="result">
-        <table>
-    <tr>
-        <td>
-            <strong>Optimum Rf</strong><br><br>
-            Cholesterol : 0.74
-        </td>
-
-        <td>
-            <strong>Simulation Rf</strong><br><br>
-            <input type="text" id="rfValue" readonly>
-        </td>
-    </tr>
-</table>
-        <p style="margin-top:20px;"><strong>RF VALUE IS DEPENDENT ON POLARITY OF SOLVENT SYSTEM</strong></p>
-    </div>
-
-    <!-- Hidden initially -->
-    <div class="explanation" id="explanation">
-        <h2>EXPLANATION:</h2>
-
-        <p>
-            Rf value is dependent on the polarity of the solvent system. It increases with the rise in the polarity while shows decreasing trend with the lowering of the polarity of the solvent system. This fact is found to be true in present analysis.
-        </p>
-        <p>
-            As the solvent system moves over the surface of the stationary phase, it transports the analytes over the particles of the stationary phase. If a highly polar solvent is used, it will interact strongly with the molecules of stationary phase and will leave only few sites on the surface of stationary phase, free to bind with the analytes. The analytes will, therefore, move quickly over the stationary phase. Similarly, polar groups in the solvent can interact strongly with polar functionality in the analytes and prevent interaction of the analytes with the surface of the stationary phase.
-        </p>
-        <p>
-            The polarity of a solvent system to be used for chromatography is evaluated by examining the dielectric constant and dipole moment of the solvent. The larger these two numbers, the more polar is the solvent. In addition, the hydrogen bonding ability of the solvent is also considered.
-        </p>
-    </div>
-
 </div>
 
 <script>
@@ -289,9 +460,11 @@ function setVisibility() {
     if (solvent !== "None" && rfValues[solvent]) {
         rfValue.value = rfValues[solvent];
         explanation.style.display = "block";
+        explanation.classList.add("show");
     } else {
         rfValue.value = "";
         explanation.style.display = "none";
+        explanation.classList.remove("show");
     }
 
     console.log("Selected solvent:", solvent);
