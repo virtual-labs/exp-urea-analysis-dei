@@ -1,0 +1,91 @@
+{
+  "version": 2.0,
+  
+  "questions": [
+    {
+     
+      "question": "1. Urea is transported by-",
+      "answers": {
+        "a": "Plasma",
+        "b": "Blood",
+        "c": "RBC",
+        "d": "WBC"
+      },
+      "explanations": {
+        "a": "Correct. Urea is transported in the blood plasma, which is the liquid component of blood.",
+        "b": "Incorrect. While urea is carried in blood, it is specifically dissolved in the plasma, not the cellular components.",
+        "c": "Incorrect. RBCs (Red Blood Cells) primarily carry oxygen and carbon dioxide.",
+        "d": "Incorrect. WBCs (White Blood Cells) are part of the immune system, not for transporting urea."
+      },
+      "correctAnswer": "a"
+    },
+    {
+     
+      "question": "2. Excess amino acids in the body are broken down to form urea in-",
+      "answers": {
+        "a": "Kidney",
+        "b": "Liver",
+        "c": "Spleen",
+        "d": "Pancreas"
+      },
+      "explanations": {
+        "a": "Incorrect. The kidneys filter urea from blood but do not synthesize it.",
+        "b": "Correct. The liver is the primary site for the urea cycle (ornithine cycle), where excess amino acids are deaminated and converted to urea.",
+        "c": "Incorrect. The spleen is involved in filtering blood and immune responses.",
+        "d": "Incorrect. The pancreas produces digestive enzymes and hormones like insulin."
+      },
+      "correctAnswer": "b"
+    },
+    {
+     
+      "question": "3. The concentration of urea is highest in-",
+      "answers": {
+        "a": "Renal vein",
+        "b": "Hepatic portal vein",
+        "c": "Dorsal aorta",
+        "d": "Hepatic vein"
+      },
+      "explanations": {
+        "a": "Incorrect. The renal vein carries blood away from the kidney after urea has been filtered out.",
+        "b": "Incorrect. The hepatic portal vein carries nutrient-rich blood from the digestive system to the liver.",
+        "c": "Incorrect. The dorsal aorta carries oxygenated blood to the body, not specifically high in urea.",
+        "d": "Correct. The hepatic vein carries blood from the liver, where urea is synthesized, back to the heart and therefore has the highest concentration of urea."
+      },
+      "correctAnswer": "d"
+    },
+    {
+     
+      "question": "4. Which one has the highest percentage of nitrogen?",
+      "answers": {
+        "a": "Ca(NO₃)₂",
+        "b": "CAN",
+        "c": "Urea",
+        "d": "NH₄NO₃"
+      },
+      "explanations": {
+        "a": "Incorrect. Calcium nitrate contains a lower percentage of nitrogen than urea.",
+        "b": "Incorrect. CAN (Calcium Ammonium Nitrate) contains approximately 25–27% nitrogen.",
+        "c": "Correct. Urea contains approximately 46% nitrogen, the highest among these common fertilizers.",
+        "d": "Incorrect. Ammonium nitrate contains approximately 33–35% nitrogen."
+      },
+      "correctAnswer": "c"
+    },
+    {
+     
+      "question": "5. Arrange the following solvents in their increasing order of polarity: Water, Methanol, Toluene-",
+      "answers": {
+        "a": "Methanol → Toluene → Water",
+        "b": "Toluene → Water → Methanol",
+        "c": "Water → Toluene → Methanol",
+        "d": "Toluene → Methanol → Water"
+      },
+      "explanations": {
+        "a": "Incorrect. This is not the correct order of polarity.",
+        "b": "Incorrect. Water is more polar than methanol.",
+        "c": "Incorrect. Water is the most polar solvent among the three.",
+        "d": "Correct. Toluene is the least polar, methanol is moderately polar, and water is the most polar. Therefore, the increasing order of polarity is Toluene < Methanol < Water."
+      },
+      "correctAnswer": "d"
+    }
+  ]
+}
