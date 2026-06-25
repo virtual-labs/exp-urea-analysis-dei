@@ -4,7 +4,7 @@
   "questions": [
      {
      
-      "question": "1. Rf stands for",
+      "question": "1. Rf stands for-",
       "answers": {
         "a": "Reference Factor",
         "b": "Relative Factor",
@@ -21,7 +21,7 @@
     },
     {
     
-      "question": "2. What will be the nature of sample is used in HPTLC analysis",
+      "question": "2. What will be the nature of sample is used in HPTLC analysis?",
       "answers": {
         "a": "Partially Soluble",
         "b": "Insoluble",
@@ -38,7 +38,7 @@
     },
     {
      
-      "question": "3. How many lamps are present in densitometer of HPTLC used for analysis",
+      "question": "3. How many lamps are present in densitometer of HPTLC used for analysis?",
       "answers": {
         "a": "Four",
         "b": "Three",
